@@ -1,5 +1,13 @@
 from lib.interface import *
+from lib.arquivo import *
 from time import sleep
+
+#============= Verificando se o ARQUIVO EXISTE
+
+arq = 'cursoemvideo.txt'
+
+if not arquivoExiste(arq):
+    criarArquivo(arq)
 
 while True:
     resposta = menu(['Ver pessoas Cadastradas', 'Cadastrar Nova Pessoa', 'Sair do Sistema'])
