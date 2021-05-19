@@ -11,9 +11,15 @@ if not arquivoExiste(arq):
 while True:
     resposta = menu(['Ver pessoas Cadastradas', 'Cadastrar Nova Pessoa', 'Sair do Sistema']) # Lista
     if resposta == 1:
-        cabeçalho('Opção 1')
+        #Opção de listar o conteúdo de um arquivo
+        lerArquivo(arq)
+
     elif resposta == 2:
-        cabeçalho('Opção 2')
+        # Opção para cadastrar um conteudo no arquivo.
+        cabeçalho('NOVO CADASTRO')
+        nome =str(input('Nome: '))
+        idade = leiaInt('Idade: ') # Vai ler a idade como numero inteiro.
+        cadastrar(arq, nome, idade)
     elif resposta == 3:
         cabeçalho('Saindo do Sistema ... Até Logo!')
         break
